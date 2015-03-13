@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="teamManager" ng-cloak ng-controller="MainCtrl as mainCtrl">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Team Manager</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Team Manager</a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li ng-class="mainCtrl.navClass('team')"><a href="" ng-click="mainCtrl.loadTeam()">My Team</a></li>
+                    <li ng-class="mainCtrl.navClass('findPlayers')"><a href="" ng-click="mainCtrl.loadFindPlayers()">Find Players</a></li>
+                    <li ng-class="mainCtrl.navClass('createPlayer')"><a href="" ng-click="mainCtrl.loadCreatePlayer()">Create Player</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ng-view></ng-view>
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-route.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+
+    <script src="app.js"></script>
+    <script src="jsExtensions.js"></script>
+
+    <script src="api/apiService.js"></script>
+
+    <script src="mainCtrl.js"></script>
+    <script src="pages/createPlayer/createPlayerCtrl.js"></script>
+    <script src="pages/findPlayers/findPlayersCtrl.js"></script>
+    <script src="pages/team/teamCtrl.js"></script>
+    <script src="models/playerModel.js"></script>
+
+    <script src="components/playerTileDirective.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<div>
+
+    <div class="media">
+        <div class="media-left">
+            <div class="media-object profile-pic" ng-style="{'background-image': 'url(' + ctrl.player.img + ')'}"></div>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">
+                {{ctrl.player.name}}
+                <a href="" class="btn btn-default glyphicon glyphicon-menu-down" ng-click="ctrl.expanded = true" ng-show="!ctrl.expanded"></a>
+                <a href="" class="btn btn-default glyphicon glyphicon-menu-up" ng-click="ctrl.expanded = false" ng-show="ctrl.expanded"></a>
+                <a href="" class="btn btn-default glyphicon glyphicon-ok" ng-click="ctrl.addClicked()" ng-show="!ctrl.player.onTeam"></a>
+                <a href="" class="btn btn-default glyphicon glyphicon-remove" ng-click="ctrl.removeClicked()" ng-show="ctrl.player.onTeam"></a>
+            </h4>
+
+            <p>{{ctrl.player.bio}}</p>
+
+            <div collapse="!ctrl.player.expanded">
+                <table class="table">
+                    <tr>
+                        <th>Age</th>
+                        <th>Position</th>
+                        <th>Team</th>
+                        <th>Minutes Played</th>
+                        <th>Lineups</th>
+                        <th>Goals</th>
+                        <th>Cards</th>
+                    </tr>
+                    <tr>
+                        <td>{{ctrl.player.age}}</td>
+                        <td>{{ctrl.player.position}}</td>
+                        <td>{{ctrl.player.team}}</td>
+                        <td>{{ctrl.player.minutesPlayed}}</td>
+                        <td>{{ctrl.player.lineups}}</td>
+                        <td>{{ctrl.player.goals}}</td>
+                        <td>{{ctrl.player.cards}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
