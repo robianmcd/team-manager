@@ -65,4 +65,8 @@
     Api.prototype.deleteUserPlayer = function(player) {
         return this.$http.delete(USER_PLAYER_URL.format(player.id));
     };
+
+    Api.prototype.createPlayer = function(player) {
+        return this.$http.post(PLAYERS_URL.format(''), player.serialize());
+    };
 })();

@@ -15,6 +15,14 @@ app.get('/api/players', function (req, res) {
     res.send(players);
 });
 
+app.post('/api/players', function (req, res) {
+    var newPlayer = req.body;
+    newPlayer.ID = nextId;
+    nextId++;
+    players.push(newPlayer);
+    res.sendStatus(200);
+});
+
 app.get('/api/players/:ID', function (req, res) {
     res.send(players.filter(function (player) {
         return player.ID.toString() === req.params.ID;
@@ -180,3 +188,5 @@ var players = [
         ImageUrl: 'http://www.nacion.com/deportes/futbol-costa-rica/Johan-Venegas_LNCIMA20130715_0186_23.jpg'
     }
 ];
+
+var nextId = 11;

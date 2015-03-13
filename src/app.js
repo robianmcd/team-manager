@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('teamManager', ['ngRoute', 'ui.bootstrap']);
+    var app = angular.module('teamManager', ['ngRoute', 'ngMessages', 'ui.bootstrap']);
 
     app.config(function ($routeProvider) {
 
