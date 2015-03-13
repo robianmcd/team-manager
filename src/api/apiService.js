@@ -2,6 +2,7 @@
     var PLAYERS_URL = '/api/players/{0}';
     var SEARCH_PLAYERS_URL = '/api/search/players?query={0}';
     var USER_PLAYERS_URL = '/api/user/players';
+    var USER_PLAYER_URL = '/api/user/players/{0}';
 
     function Api($http, $controller, $q) {
         this.$http = $http;
@@ -59,5 +60,9 @@
                     return self.$controller('Player', {serializedPlayer: player});
                 });
             });
+    };
+
+    Api.prototype.deleteUserPlayer = function(player) {
+        return this.$http.delete(USER_PLAYER_URL.format(player.id));
     };
 })();

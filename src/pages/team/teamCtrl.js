@@ -1,6 +1,7 @@
 (function () {
     function TeamCtrl(api) {
         var self = this;
+        this.api = api;
 
         api.getUserPlayers().then(function (players) {
             players.forEach(function (player) {
@@ -12,5 +13,10 @@
     }
 
     angular.module('teamManager').controller('TeamCtrl', TeamCtrl);
+
+    TeamCtrl.prototype.removePlayer = function(player) {
+        this.players.splice(this.players.indexOf(player), 1);
+        this.api.deleteUserPlayer(player);
+    };
 
 })();

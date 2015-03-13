@@ -41,6 +41,11 @@ app.get('/api/user/players', function (req, res) {
     res.send(userPlayers);
 });
 
+app.delete('/api/user/players/:ID', function (req, res) {
+    userPlayers.splice(userPlayers.indexOf(parseInt(req.params.ID)), 1);
+    res.sendStatus(200);
+});
+
 var userPlayers = [];
 
 var players = [
