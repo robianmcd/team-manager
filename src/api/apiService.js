@@ -34,7 +34,7 @@
         });
     };
 
-    Api.prototype.getPlayer = function(id) {
+    Api.prototype.getPlayer = function (id) {
         return this.$http.get(PLAYERS_URL.format(id)).then(function (response) {
             return response.data;
         });
@@ -62,11 +62,11 @@
             });
     };
 
-    Api.prototype.deleteUserPlayer = function(player) {
+    Api.prototype.deleteUserPlayer = function (player) {
         return this.$http.delete(USER_PLAYER_URL.format(player.id));
     };
 
-    Api.prototype.createPlayer = function(player) {
+    Api.prototype.createPlayer = function (player) {
         return this.$http.post(PLAYERS_URL.format(''), player.serialize());
     };
 })();
