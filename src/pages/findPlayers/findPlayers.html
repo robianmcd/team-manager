@@ -4,15 +4,26 @@
             <h2 class="text-center">Find Players</h2>
 
             <div class="input-group">
-            <span class="input-group-btn">
-                <button type="submit" class="btn btn-primary btn-lg" ng-click="ctrl.search(ctrl.searchText)">Search</button>
-            </span>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="ctrl.search(ctrl.searchText)">Search</button>
+                </span>
+
                 <input type="text" ng-model="ctrl.searchText"
                        class="form-control"
                        placeholder="Start typing the name of a player"
                        typeahead="player.name for player in ctrl.getMatchingPlayers($viewValue)"
                        typeahead-wait-ms="200">
+
+<!--                <input type="text" ng-model="ctrl.searchText" class="form-control" ng-change="ctrl.searchChanged()"
+                        ng-model-options="{updateOn: 'default blur', debounce: {'default': 1000, 'blur': 0}}"/>-->
             </div>
+
+<!--            <ul class="list-group">
+                <li class="list-item" ng-repeat="match in ctrl.typeaheadMatches">
+                    {{match.name}}
+                </li>
+            </ul>-->
+
         </form>
     </div>
 

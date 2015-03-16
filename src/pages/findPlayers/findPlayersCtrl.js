@@ -29,4 +29,11 @@
         player.onTeam = true;
         return this.api.addPlayer(player);
     };
+
+    FindPlayersCtrl.prototype.searchChanged = function() {
+        var self = this;
+        this.getMatchingPlayers(this.searchText).then(function (matches) {
+            self.typeaheadMatches = matches;
+        });
+    };
 })();
