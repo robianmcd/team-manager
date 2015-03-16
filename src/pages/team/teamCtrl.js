@@ -1,6 +1,7 @@
 (function () {
-    function TeamCtrl(players) {
+    function TeamCtrl(api, players) {
         var self = this;
+        self.api = api;
 
         players.forEach(function (player) {
             player.onTeam = true;
