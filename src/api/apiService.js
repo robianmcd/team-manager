@@ -47,19 +47,7 @@
     Api.prototype.getUserPlayers = function () {
         var self = this;
 
-        return this.$http.get(USER_PLAYERS_URL)
-            .then(function (response) {
-                var playerIds = response.data;
 
-                return self.$q.all(playerIds.map(function (id) {
-                    return self.getPlayer(id);
-                }));
-            })
-            .then(function (players) {
-                return players.map(function (player) {
-                    return self.$controller('Player', {serializedPlayer: player});
-                });
-            });
     };
 
     Api.prototype.deleteUserPlayer = function (player) {

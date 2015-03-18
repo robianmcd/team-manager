@@ -1,13 +1,11 @@
 (function () {
-    function TeamCtrl(api, players) {
+    function TeamCtrl(api) {
         var self = this;
         self.api = api;
 
-        players.forEach(function (player) {
+        /*players.forEach(function (player) {
             player.onTeam = true;
-        });
-
-        self.players = players;
+        });*/
     }
 
     angular.module('teamManager').controller('TeamCtrl', TeamCtrl);
