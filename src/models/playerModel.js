@@ -1,6 +1,8 @@
 (function(){
 
-    function Player(serializedPlayer) {
+    function Player(serializedPlayer, $log) {
+        $log.info('Creating a player');
+
         if(serializedPlayer.name) {
             angular.extend(this, serializedPlayer);
         } else {
@@ -34,6 +36,10 @@
         }
     };
 
-    angular.module('teamManager').controller('Player', Player);
+    var app = angular.module('teamManager');
+    app.controller('Player', Player);
+    app.factory('Player', function () {
+        return Player;
+    });
 
 })();
