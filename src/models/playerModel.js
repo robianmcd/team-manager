@@ -1,9 +1,8 @@
-(function(){
+(function () {
 
     function Player(serializedPlayer, $log) {
-        $log.info('Creating a player');
-
-        if(serializedPlayer.name) {
+        $log.log('Player created');
+        if (serializedPlayer.name) {
             angular.extend(this, serializedPlayer);
         } else {
             this.id = serializedPlayer.ID;
@@ -20,7 +19,7 @@
         }
     }
 
-    Player.prototype.serialize = function() {
+    Player.prototype.serialize = function () {
         return {
             ID: this.id,
             FullName: this.name,

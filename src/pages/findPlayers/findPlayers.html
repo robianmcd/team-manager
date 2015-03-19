@@ -8,9 +8,16 @@
                     <button type="submit" class="btn btn-primary btn-lg" ng-click="ctrl.search(ctrl.searchText)">Search</button>
                 </span>
 
-                <input type="text" ng-model="ctrl.searchText" class="form-control"/>
+                <input type="text" ng-model="ctrl.searchText" class="form-control" ng-change="ctrl.searchChanged()"
+                       ng-model-options="{updateOn: 'blur default', debounce: {blur: 0, default: 1000}}"/>
             </div>
         </form>
+
+        <ul class="list-group">
+            <li class="list-item" ng-repeat="player in ctrl.typeaheadMatches">
+                {{player.name}}
+            </li>
+        </ul>
     </div>
 
     <div>
