@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('teamManager', ['ngRoute', 'ngMessages', 'ui.bootstrap']);
 
-    app.config(function ($routeProvider) {
+    app.config(['$routeProvider', function ($routeProvider) {
 
         $routeProvider
             .when('/team', {
@@ -24,5 +24,5 @@
             .otherwise({
                 redirectTo: '/team'
             });
-    })
+    }])
 })();
