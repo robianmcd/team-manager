@@ -7,10 +7,7 @@
             controllerAs: 'ctrl',
             bindToController: true,
             scope: {
-                player: '=',
-                expanded: '=',
-                addPlayer: '&',
-                removePlayer: '&'
+                player: '='
             }
         };
     });
@@ -20,10 +17,10 @@
     }
 
     PlayerTileCtrl.prototype.addClicked = function() {
-        this.addPlayer({$player: this.player});
+
     };
 
     PlayerTileCtrl.prototype.removeClicked = function() {
-        this.removePlayer({$player: this.player});
+
     };
 })();

@@ -36,4 +36,16 @@
             self.typeaheadMatches = matches;
         });
     };
+
+    FindPlayersCtrl.prototype.expandAll = function() {
+        this.players.forEach(function (player) {
+            player.expanded = true;
+        });
+    };
+
+    FindPlayersCtrl.prototype.collapseAll = function() {
+        this.players.forEach(function (player) {
+            player.expanded = false;
+        });
+    };
 })();

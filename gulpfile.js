@@ -5,14 +5,11 @@ var gulp = require('gulp'),
 
 
 gulp.task('templateCache', function () {
-    return gulp.src(['src/**/*.html', '!src/index.html'])
-        .pipe(templateCache({module: 'teamManager'}))
-        .pipe(gulp.dest('build'));
+    return gulp.src(['src/**/*.html', '!src/index.html']);
 });
 
 gulp.task('build', function () {
     return gulp.src('src/**/*.js')
-        .pipe(ngAnnotate())
         .pipe(gulp.dest('build'));
 });
 
