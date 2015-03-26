@@ -133,7 +133,7 @@ var players = [
         Lineups: 25,
         Points: 0,
         Cards: 4,
-        ImageUrl: 'http://www.newyorkredbulls.com/sites/newyork/files/players/head-shots/miller_roy.jpg'
+        ImageUrl: 'https://nbcprosoccertalk.files.wordpress.com/2013/03/roy-miller-head-shot.jpg'
     },
     {
         ID: 7,
