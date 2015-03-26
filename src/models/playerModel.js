@@ -1,7 +1,7 @@
 (function(){
 
     function Player(serializedPlayer, $log) {
-        $log.info('Creating a player');
+        //$log.info('Creating a player');
 
         if(serializedPlayer.name) {
             angular.extend(this, serializedPlayer);
