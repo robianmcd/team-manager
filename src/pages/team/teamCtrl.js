@@ -3,7 +3,7 @@
         var self = this;
         self.api = api;
 
-        /*players.forEach(function (player) {
+        /*self.players.forEach(function (player) {
             player.onTeam = true;
         });*/
     }
