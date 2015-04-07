@@ -33,7 +33,7 @@ app.get('/api/search/players', function (req, res) {
     console.log(req.query);
     if(req.query.query) {
         res.send(players.filter(function (player) {
-            return player.name.toLowerCase().indexOf(req.query.query.toLowerCase()) !== -1;
+            return player.FullName.toLowerCase().indexOf(req.query.query.toLowerCase()) !== -1;
         }));
     } else {
         res.send(players);
