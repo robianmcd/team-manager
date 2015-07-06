@@ -35,5 +35,6 @@
     };
 
     angular.module('teamManager').controller('Player', Player);
+    angular.module('teamManager').factory('Player', function() {return Player;});
 
 })();

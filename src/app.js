@@ -6,12 +6,7 @@
         $routeProvider
             .when('/team', {
                 templateUrl: 'pages/team/team.html',
-                controller: 'TeamCtrl as ctrl',
-                resolve: {
-                    players: function (api) {
-                        return api.getUserPlayers();
-                    }
-                }
+                controller: 'TeamCtrl as ctrl'
             })
             .when('/findPlayers', {
                 templateUrl: 'pages/findPlayers/findPlayers.html',

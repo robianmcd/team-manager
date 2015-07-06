@@ -4,24 +4,18 @@
     var USER_PLAYERS_URL = '/api/user/players';
     var USER_PLAYER_URL = '/api/user/players/{0}';
 
-    function Api($http, $controller, $q) {
+    function Api($http, $controller, $q, Player) {
         this.$http = $http;
         this.$controller = $controller;
         this.$q = $q;
+        this.Player = Player;
     }
 
     angular.module('teamManager').service('api', Api);
 
 
     Api.prototype.searchPlayers = function (query) {
-        var self = this;
-
-        return this.$http.get(SEARCH_PLAYERS_URL.format(query || ''))
-            .then(function (response) {
-                return response.data.map(function (player) {
-                    return self.$controller('Player', {serializedPlayer: player});
-                });
-            });
+        //TODO: implement this
     };
 
     Api.prototype.getAllPlayers = function () {
@@ -29,7 +23,7 @@
 
         return this.$http.get(PLAYERS_URL.format('')).then(function (response) {
             return response.data.map(function (player) {
-                return self.$controller('Player', {serializedPlayer: player});
+                return new self.Player(player);
             });
         });
     };
@@ -41,25 +35,11 @@
     };
 
     Api.prototype.addPlayer = function (player) {
-        return this.$http.post(USER_PLAYERS_URL, player.serialize());
+        //TODO: implement this
     };
 
     Api.prototype.getUserPlayers = function () {
-        var self = this;
-
-        return this.$http.get(USER_PLAYERS_URL)
-            .then(function (response) {
-                var playerIds = response.data;
-
-                return self.$q.all(playerIds.map(function (id) {
-                    return self.getPlayer(id);
-                }));
-            })
-            .then(function (players) {
-                return players.map(function (player) {
-                    return self.$controller('Player', {serializedPlayer: player});
-                });
-            });
+        //TODO: implement this
     };
 
     Api.prototype.deleteUserPlayer = function (player) {
@@ -70,3 +50,43 @@
         return this.$http.post(PLAYERS_URL.format(''), player.serialize());
     };
 })();
+
+
+/*
+Api.prototype.searchPlayers = function (query) {
+    var self = this;
+
+    return this.$http.get(SEARCH_PLAYERS_URL.format(query || ''))
+        .then(function (response) {
+            return response.data.map(function (player) {
+                return new self.Player(player);
+            });
+        });
+};*/
+
+
+/*
+Api.prototype.addPlayer = function (player) {
+    return this.$http.post(USER_PLAYERS_URL, player.serialize());
+};
+*/
+
+
+/*
+Api.prototype.getUserPlayers = function () {
+    var self = this;
+
+    return this.$http.get(USER_PLAYERS_URL)
+        .then(function (response) {
+            var playerIds = response.data;
+
+            return self.$q.all(playerIds.map(function (id) {
+                return self.getPlayer(id);
+            }));
+        })
+        .then(function (players) {
+            return players.map(function (player) {
+                return new self.Player(player);
+            });
+        });
+};*/
